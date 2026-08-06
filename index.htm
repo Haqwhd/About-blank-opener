@@ -60,28 +60,20 @@
     alert("Popup blocked! Please allow popups for this site.");
     return;
   }
-
-  win.document.write('<!DOCTYPE html><html><head></head><body></body></html>'); 
-  win.document.close();
-  win.document.body.style.margin = '0';
-  win.document.body.style.height = '100vh';
-  win.document.title = 'Google Docs';
-
-// favicon adding (THE ultimate trickery)
-  var faviconPath = window.location.origin + '/2026gdocsFav.svg'; 
-
-  var link = win.document.createElement('link');
-  link.rel = 'icon';
-  link.type = 'image/svg+xml'; // note-to-self do NOT change 'image', only the extension
-  link.href = faviconPath; 
-  win.document.head.appendChild(link);
+           win.document.body.style.margin = '0';
+           win.document.body.style.height = '100vh';
+				   win.document.title = 'Google Docs';
            
   var iframe = win.document.createElement('iframe');
-  iframe.style.border = 'none';
-  iframe.style.width = '100vw';
-  iframe.style.height = '100vh';
-  iframe.style.margin = '0';
-  iframe.src = url;
+           
+           iframe.style.border = 'none';
+				   iframe.style.width = '100vw';
+           iframe.style.height = '100vh';
+           iframe.style.margin = '0';
+           iframe.src = url;
+				   iframe.setAttribute('allowfullscreen', 'true');
+				   iframe.setAttribute('allow', 'fullscreen');
+				 
 
   win.document.body.appendChild(iframe);
 }
