@@ -61,6 +61,8 @@
     return;
   }
 
+  win.document.write('<!DOCTYPE html><html><head></head><body></body></html>'); 
+  win.document.close();
   win.document.body.style.margin = '0';
   win.document.body.style.height = '100vh';
   win.document.title = 'Google Docs';
