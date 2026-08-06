@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🤫 About:Blank Opener</title>
+    <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>Enter a URL to open in an iframe</h1>
+    
+    <input type="text" id="urlInput" placeholder='Example: "example.com"' style="width: 300px; padding: 5px;">
+    <button onclick="launchUserUrl()">Open Website</button>
+    
+    <p>Presets:</p>
+    
+    <button onclick="create('https://krunker.io')">Krunker.io</button>
+    
+    <button onclick="create('https://www.onlinegames.io')">Online games.io</button>
+    
+    <p>More presets coming next week!</p>
+    
+    <script>
+        //url opener from address bar function
+        function launchUserUrl() {
+            var inputUrl = document.getElementById('urlInput').value.trim();
+
+            if (!inputUrl) {
+                alert("Please enter a URL first.");
+                return;
+            }
+
+            //makes it so there always is https:// at begining
+            if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+                inputUrl = 'https://' + inputUrl;
+            }
+            
+            create(inputUrl);
+        }
+        
+        document.getElementById("urlInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                launchUserUrl();
+            }
+        });
+
+        //actual aboutblank opener
+       function create(url) {
+  var win = window.open();
+  
+  //popup blocker checker
+  if (!win) {
+    alert("Popup blocked! Please allow popups for this site.");
+    return;
+  }
+
+  win.document.body.style.margin = '0';
+  win.document.body.style.height = '100vh';
+
+  var iframe = win.document.createElement('iframe');
+  iframe.style.border = 'none';
+  iframe.style.width = '100vw';
+  iframe.style.height = '100vh';
+  iframe.style.margin = '0';
+  iframe.src = url;
+
+  win.document.body.appendChild(iframe);
+}
+    </script>
+</body>
+</html>
