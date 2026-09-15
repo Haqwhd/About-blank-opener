@@ -68,8 +68,15 @@
     alert("Popup blocked! Please allow popups for this site.");
     return;
   }
-           win.document.body.style.margin = '0';
-           win.document.body.style.height = '100vh';
+		   
+  // ---> NEW: Add the close warning to the newly opened tab <---
+  win.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = ''; // Standard trigger for modern browsers
+  });
+		   
+  win.document.body.style.margin = '0';
+  win.document.body.style.height = '100vh';
 				   win.document.title = 'My Custom Tab!';
            
   var iframe = win.document.createElement('iframe');
