@@ -93,5 +93,13 @@
   win.document.body.appendChild(iframe);
 }
     </script>
+<script>
+  // This triggers when the user tries to close the tab or navigate away
+  window.addEventListener('beforeunload', function (e) {
+    // Requires a user interaction on the page first (e.g., clicking anywhere)
+    e.preventDefault();
+    e.returnValue = ''; // Standard trigger for modern browsers
+  });
+</script>
 </body>
 </html>
