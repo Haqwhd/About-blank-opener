@@ -2,7 +2,7 @@
 
 ### Eyy! I see you visited this to learn how to unblock this website on your school chromebook!
 ### Cool, anyway, let's get into it.
-### If you can learn it by just reading, this is for you. If not, see the picture in the repo titled "How-to-unblock-picture.png"
+### If you can learn it by just reading, this is for you. If not, see the folder in the repo titled "How-to-unblock-pictures"
 #### Step 1, Go to your Schoology homepage.
 #### Step 2, Click the calendar icon. (looks kinda like this 📆)
 #### Step 3, Click on any blank square. (its a square with a number in the top left corner)
