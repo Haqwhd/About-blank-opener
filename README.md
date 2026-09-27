@@ -4,3 +4,4 @@
 ### Constantly updating.
 
 ##### If you can't already tell, this is just a games website to be used at school 🫤
+### If you wanna know how to unblock the website on your school Chromebook, visit the second readme, titled "How-to-unblock.md"
