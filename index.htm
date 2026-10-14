@@ -128,7 +128,7 @@
                 return;
             }
 
-            // Add close warning to newly opened tab
+            // Add close warning to newly opened tab | I know this is a duplicate but I'm scared to remove one in case it breaks
             win.addEventListener('beforeunload', function(e) {
                 e.preventDefault();
                 e.returnValue = '';
@@ -136,8 +136,14 @@
 
             win.document.body.style.margin = '0';
             win.document.body.style.height = '100vh';
-            win.document.title = 'New Tab';
-
+            win.document.title = 'Untitled document';
+            //favicon
+            var link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/webp'; // Change to image/png if using a PNG
+            link.href = faviconUrl || 'https://haqwhd.github.io/About-blank-opener/gdoc-icon.webp'; // Your URL goes here
+            win.document.head.appendChild(link);
+            //no more favicon
             var iframe = win.document.createElement('iframe');
 
             iframe.style.border = 'none';
@@ -153,7 +159,7 @@
     </script>
 
     <script>
-        //final browser filter bypasser
+        //final browser filter bypasser | I know this is a duplicate but I'm scared to remove one in case it breaks.
         window.addEventListener('beforeunload', function(e) {
             e.preventDefault();
             e.returnValue = '';
