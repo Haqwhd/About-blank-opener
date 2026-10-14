@@ -138,10 +138,11 @@
             win.document.body.style.height = '100vh';
             win.document.title = 'Untitled document';
             //favicon
+            var faviconUrl = 'https://haqwhd.github.io/About-blank-opener/gdoc-icon.webp'
             var link = win.document.createElement('link');
             link.rel = 'icon';
-            link.type = 'image/webp'; // Change to image/png if using a PNG
-            link.href = faviconUrl || 'https://haqwhd.github.io/About-blank-opener/gdoc-icon.webp'; // Your URL goes here
+            link.type = 'image/webp';
+            link.href = faviconUrl;
             win.document.head.appendChild(link);
             //no more favicon
             var iframe = win.document.createElement('iframe');
