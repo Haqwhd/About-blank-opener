@@ -4,7 +4,6 @@ This is my dream website. I could never really find a good one while in school-s
 
 *Sites you visit on here are not tracked by your browser, they are either ignored or simply listed as an about:blank page.
 > [!IMPORTANT]
-> **Let's play!**
 > If you want to know how to set up or unblock this website on your school Chromebook, please check out our dedicated guide: [How-to-unblock.md](How-to-unblock.md)
 
 ---
