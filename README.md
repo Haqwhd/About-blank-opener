@@ -1,6 +1,8 @@
 # About-blank Opener (A:BO/ABO)
 
-This is my dream website. I could never really find a good one while in school-so I finally made one! My games site has utilizes `about:blank` to display sites with iframes. I chose this method because `about:blank` is a site essential to any browser. It is most commonly used for redirects, but if a school were to block it...it would ruin the chromebooks. (Full: A:BO features a clean, minimal page designed to open web content inside an `about:blank` window to assist with layout framing and presentation. It features a simple layout with an address bar and preset navigation buttons for hardcoded URLs.)
+This is my dream website. I could never really find a good one while in school-so I finally made one! My games site has utilizes `about:blank` to display sites with iframes. I chose this method because `about:blank` is a site essential to any browser. It is most commonly used for redirects, but if a school were to block it...it would ruin the chromebooks.
+
+*Sites you visit on here are not tracked by your browser, they are either ignored or simply listed as an about:blank page.
 > [!IMPORTANT]
 > **Let's play!**
 > If you want to know how to set up or unblock this website on your school Chromebook, please check out our dedicated guide: [How-to-unblock.md](How-to-unblock.md)
