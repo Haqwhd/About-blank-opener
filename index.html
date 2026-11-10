@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Blank Opener</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="https://haqwhd.github.io/About-blank-opener/favicon.png">
+        
+    <style>
+       * { box-sizing: border-box; } 
+    html, body { margin: 0; width: 100%; min-height: 100%; background: linear-gradient(blue, #000435);} 
+    body { font-family: Arial, Helvetica, sans-serif; text-align: center; padding: 5vh 5vw; } 
+    h1 { font-size: clamp(28px, 4vw, 48px); margin: 0 0 25px; } 
+    #urlInput { width: min(600px, 70vw); padding: 14px; font-size: clamp(16px, 2vw, 22px); } 
+    .open-button { font-size: clamp(16px, 2vw, 22px); padding: 14px 22px; margin: 5px; cursor: pointer; } 
+    .category { margin-top: 30px; } 
+    .category-title { font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 10px; color: white;} 
+    /*Button LAYOUT*/
+    .buttons { display: flex; flex-wrap: wrap; 
+    justify-content: center; gap: 10px; 
+    max-width: 1100px; margin: auto;}
+    
+    
+    /*Button STYLING*/
+    .buttons button { font-size: clamp(16px, 1.8vw, 21px); 
+    padding: 12px 20px; cursor: pointer; 
+    border-radius: 25px; background-color: lightblue; 
+    border-color: #7ED4E6; border-width: 10px; 
+    transition: transform 0.2s ease-in-out;}
+    .buttons button:hover { transform: scale(1.08); }
+    
+    .announcements { font-size: clamp(22px, 4.2vw, 40px); margin-bottom: 15px; color: white; }
+    
+    @media (max-width: 600px) {
+    body { padding: 30px 15px; }
+
+    #urlInput { width: 90vw; }
+
+    .open-button { display: block; margin: 10px auto; } }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color: white;">Enter a URL to open in an iframe!</h1>
+
+    <div>
+        <input type="text" id="urlInput" placeholder='Example: "example.com"'>
+        <button class="open-button" onclick="launchUserUrl()">Open Website</button>
+    </div>
+<p class="announcements">Eyy! It's ya boy haqwhd! I'm currently workin' on an update for the live chat. [This message will be removed or updated once the chat update is in place.] <a href="https://github.com/Haqwhd/About-blank-opener" style="color: white;">Original Github Repo</a></p>
+    <div class="category">
+        <p class="category-title">Cloaker 🤫</p>
+
+        <div class="buttons">
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/')">Go fullscreen (previously called "cloak")</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <p class="category-title">Games</p>
+
+        <div class="buttons">
+            <button onclick="create('https://krunker.io')"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMt-BJ3x6UsQWJadcGFzo_srDypl-o6s6HUZ8-FrhD9YbiA_dM1LkOlLj3fc2eOMOF7uEQhxgs4ERPyz0zL_I8mqhI30jBEa0M2L-GEc8AVg&amp;s=10" width="50"> Krunker.io</button>
+            
+            <button onclick="create('https://ubg911.gitlab.io')">Another game website</button>
+            
+            <button onclick="create('https://www.onlinegames.io')"><img src="https://www.onlinegames.io/media/posts/1323/responsive/thumbs-xs.webp" width="50"> OnlineGames io</button>
+            
+            <button onclick="create('https://calcsolver.net')">More games</button>
+            
+            <button onclick="create('https://sandstrike.io')"><img src="https://sandstrike.io/logo.png" width="50"> Ferge/Sandstrike</button>
+            
+            <button onclick="create('https://onlinegames.com')">OnlineGames com</button>
+            
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/chat.html')">Live Chatroom</button>
+            
+            <button onclick="create('https://geometrylitepc.net')"><img src="https://geometrylitepc.net/data/image/options/geometrydashlite-game-image.png" width="50"> GeometryGames</button>
+            
+            <button onclick="create('https://smashkarts.io')"><img src="https://smashkarts.io/images/smashkarts.png" width="80"></button>
+            
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/eag-ct/Minecraft 26,2.html')"><img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a" width="80"> Eaglercraft 26.2 (Zeus)</button>
+
+            <button onclick="create('https://penguinmod.com/')"><img src="https://penguinmod.com/navicon.png" width="45"> PenguinMod</button>
+        </div>
+    </div>
+    <div class="category">
+        <p class="category-title">Nick's</p>
+        <div class="buttons">
+            <button onclick="create('https://hgbfvgbnhbgpolkk.b-cdn.net')">Xylora</button>
+            <button onclick="create('https://script.google.com/macros/s/AKfycbw6tuqMVd77mSnriC26cLUZ0zPO2Vhv5xozGlW_SLyGGGzFNcHj9cSLH9sMuCv2VBK0/exec')">Echo</button>
+        </div>
+    </div>
+  
+    <div class="category">
+        <p class="category-title">Add-a-site Request</p>
+        <div class="buttons">
+            <button onclick="create('https://forms.gle/y7iGC566A9VJ4L9n6')">Website request</button>
+        </div>
+    </div>
+    
+  <p></p>
+  
+    <div class="category">
+      <p class="category-title">Requested sites & owner response</p>
+      <div class="buttons">
+          <button onclick="create('https://docs.google.com/spreadsheets/d/1-xRgASO0AKN681-8MwgfiT_onjMkIj39wd6ntuPJmAI/preview?rm=minimal')">Open sheet</button>
+      </div>
+    </div>
+    
+    <p></p>
+    
+    <div class="category">
+        <p class="category-title">Constantly updating...</p>
+    </div>
+
+    <script>
+        // URL opener from address bar
+        function launchUserUrl() {
+            var inputUrl = document.getElementById('urlInput').value.trim();
+
+            if (!inputUrl) {
+                alert("Please enter a URL first.");
+                return;
+            }
+
+            // Makes it so there always is https:// at beginning
+            if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+                inputUrl = 'https://' + inputUrl;
+            }
+
+            create(inputUrl);
+        }
+
+        document.getElementById("urlInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                launchUserUrl();
+            }
+        });
+
+        // Actual about:blank opener
+        function create(url) {
+            var win = window.open();
+
+            // Popup blocker checker
+            if (!win) {
+                alert("Popup blocked! Please allow popups for this site.");
+                return;
+            }
+
+            // Add close warning to newly opened tab | I know this is a duplicate but I'm scared to remove one in case it breaks
+            win.addEventListener('beforeunload', function(e) {
+                e.preventDefault();
+                e.returnValue = '';
+            });
+
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            win.document.title = 'Google Docs';
+            //favicon
+            var faviconUrl = 'https://ssl.gstatic.com/docs/documents/images/docs-favicon-2026-v2.ico'
+            var link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/svg+xml';
+            link.href = faviconUrl;
+            win.document.head.appendChild(link);
+            //no more favicon
+            var iframe = win.document.createElement('iframe');
+
+            iframe.style.border = 'none';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('allow', 'fullscreen');
+
+            win.document.body.appendChild(iframe);
+        }
+    </script>
+
+    <script>
+        //final browser filter bypasser | I know this is a duplicate but I'm scared to remove one in case it breaks.
+        window.addEventListener('beforeunload', function(e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+
+</body>
+</html>
