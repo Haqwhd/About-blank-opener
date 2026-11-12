@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Blank Opener</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="https://haqwhd.github.io/About-blank-opener/favicon.png">
+        
+    <style>
+       * { box-sizing: border-box; } 
+    html, body { margin: 0; width: 100%; min-height: 100%; background: linear-gradient(blue, #000435);} 
+    body { font-family: Arial, Helvetica, sans-serif; text-align: center; padding: 5vh 5vw; } 
+    h1 { font-size: clamp(28px, 4vw, 48px); margin: 0 0 25px; } 
+    #urlInput { width: min(600px, 70vw); padding: 14px; font-size: clamp(16px, 2vw, 22px); } 
+    .open-button { font-size: clamp(16px, 2vw, 22px); padding: 14px 22px; margin: 5px; cursor: pointer; } 
+    .category { margin-top: 30px; } 
+    .category-title { font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 10px; color: white;}
+    
+    /*Keeps gradient good*/
+    body {
+        min-height: 100vh;
+    }
+    
+    /*Button LAYOUT*/
+    .buttons { display: flex; flex-wrap: wrap; 
+    justify-content: center; gap: 8px; 
+    max-width: 1100px; margin: auto;}
+    
+    
+    /*Button STYLING*/
+    .buttons button { font-size: clamp(16px, 1.8vw, 21px); 
+    padding: 6px 8px; cursor: pointer; 
+    border-radius: 25px; background-color: lightblue; 
+    border-color: #7ED4E6; border-width: 7px; 
+    transition: transform 0.2s ease-in-out;}
+    .buttons button:hover { background-color: #1c5cb0; color: white; border-color: #1347a8; transform: scale(1.12); }
+    
+    /*anything in corner gets this*/
+    .corner {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 5;
+    }
+    
+    /*fullscreen*/
+    .fs {
+        
+    }
+    
+    .fs button { font-size: clamp(16px, 1.8vw, 21px);
+        padding: 2px 5px; cursor: pointer; 
+        border-radius: 25px; background-color: lightblue; 
+        border-color: #7ED4E6; border-width: 7px; 
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .fs button:hover {
+        background-color: #1c5cb0;
+        color: white;
+        border-color: #1347a8;
+        transform: scale(1.12);
+    }
+    
+    .fs button:hover img {
+        filter: invert(1);
+    }
+    
+    /*sidebar*/
+    .sb a {
+        display: inline-block;
+        font-size: clamp(16px, 1.8vw, 21px); 
+        color: black;
+        padding: 8px 8px; 
+        cursor: pointer; 
+        border-style: solid; 
+        border-radius: 25px; 
+        background-color: lightgray; 
+        border-color: gray; 
+        border-width: 7px; 
+        transition: transform 0.08s ease-in-out;
+        text-decoration: none;
+    }
+    .sb a:hover {
+        transform: scale(1.10);
+    }
+    .sb {
+        position: fixed;
+        top: 20px; left: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        /*Box ⬇️*/
+        background-color: rgba(0, 4, 53, 0.85);
+        border: 4px solid #7ED4E6;
+        border-radius: 25px;
+        padding: 10px 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 8);
+        z-index: 4;
+        max-height: calc(100vh - 30px)
+    }
+    .sbs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 6px 10px 6px 6px; 
+        box-sizing: border-box;
+    }
+    .sb p {
+        color: white;
+    }
+    
+    @media (max-width: 600px) {
+    body { padding: 30px 15px; }
+
+    #urlInput { width: 90vw; }
+
+    .open-button { display: block; margin: 10px auto; } }
+    </style>
+</head>
+
+<body>
+    
+    <div class="corner">
+        <div class="fs">
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/games')"><img src="https://static.thenounproject.com/png/66373-200.png" width="30"></button>
+        </div>
+    </div>
+    
+    <div class="sb">
+        <p>Announcements: <br>Navigation bar!</p>
+        <p>Navigation:</p>
+        <div class="sbs">
+        <a href="https://haqwhd.github.io/About-blank-opener/">Home</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/nicks">Nick's</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/games" style="background-color: gray; border-color: #404040; color: white;">Game sites</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/shoot">Shooters</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/gd">GD games</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/misc">Misc.</a>
+        <a href="https://haqwhd.github.io/About-blank-opener/info">Info page</a>
+        </div>
+    </div>
+
+    <div class="category">
+        <h1 class="category-title">Game sites</h1>
+
+        <div class="buttons">
+            <button onclick="create('https://ubg911.gitlab.io')">UBG 911</button>
+            
+            <button onclick="create('https://www.onlinegames.io')"><img src="https://www.onlinegames.io/media/posts/1323/responsive/thumbs-xs.webp" width="60"><br>OnlineGames.io</button>
+            
+            <button onclick="create('https://calcsolver.net')">Calcsolver</button>
+            
+            <button onclick="create('https://onlinegames.com')">OnlineGames.com</button>
+        </div>
+    </div>
+
+    <script>
+        // URL opener from address bar
+        function launchUserUrl() {
+            var inputUrl = document.getElementById('urlInput').value.trim();
+
+            if (!inputUrl) {
+                alert("Please enter a URL first.");
+                return;
+            }
+
+            // Makes it so there always is https:// at beginning
+            if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+                inputUrl = 'https://' + inputUrl;
+            }
+
+            create(inputUrl);
+        }
+
+        document.getElementById("urlInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                launchUserUrl();
+            }
+        });
+
+        // Actual about:blank opener
+        function create(url) {
+            var win = window.open();
+
+            // Popup blocker checker
+            if (!win) {
+                alert("Popup blocked! Please allow popups for this site.");
+                return;
+            }
+
+            // Add close warning to newly opened tab | I know this is a duplicate but I'm scared to remove one in case it breaks
+            win.addEventListener('beforeunload', function(e) {
+                e.preventDefault();
+                e.returnValue = '';
+            });
+
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            win.document.title = 'Google Docs';
+            //favicon
+            var faviconUrl = 'https://ssl.gstatic.com/docs/documents/images/docs-favicon-2026-v2.ico'
+            var link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/svg+xml';
+            link.href = faviconUrl;
+            win.document.head.appendChild(link);
+            //no more favicon
+            var iframe = win.document.createElement('iframe');
+
+            iframe.style.border = 'none';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('allow', 'fullscreen');
+
+            win.document.body.appendChild(iframe);
+        }
+    </script>
+
+    <script>
+        //final browser filter bypasser | I know this is a duplicate but I'm scared to remove one in case it breaks.
+        window.addEventListener('beforeunload', function(e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+
+</body>
+</html>
