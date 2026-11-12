@@ -16,7 +16,11 @@ This is my dream website. I could never really find a good one while in school�
 
 ---
 Announcements:
-Chat update has been delayed because of the GUI update and because of Securly. Securly: 👎 | A:BO 👍
+Chat update has been delayed because of the GUI update and because of Securly.
+
+Securly: 👎 | A:BO 👍
+
+---
 
 ### ⚖️ Legal Disclaimer
 *Eaglercraft is an unofficial, non-commercial fan recreation. It is not affiliated with, authorized, maintained, sponsored, or endorsed by Mojang Studios or any of its affiliates. Minecraft is a registered trademark of Mojang Studios. All rights belong to their respective owners.*
