@@ -1,6 +1,6 @@
     <div class="corner">
         <div class="fs">
-            <button onclick="create('{{ page.url }}')"><img src="https://static.thenounproject.com/png/66373-200.png" width="30"></button>
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener{{ page.url }}')"><img src="https://static.thenounproject.com/png/66373-200.png" width="30"></button>
         </div>
     </div>
     
@@ -8,12 +8,12 @@
         <p>Announcements: <br>Navigation bar!</p>
         <p>Navigation:</p>
         <div class="sbs">
-            <a href="https://haqwhd.github.io/About-blank-opener/">Home</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/nicks.html">Nick's</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/games.html">Game sites</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/shoot.html">Shooters</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/gd.html">GD games</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/misc.html">Misc.</a>
-            <a href="https://haqwhd.github.io/About-blank-opener/info.html">Info page</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/" {% if page.url == "/" or page.url == "/index.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Home</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/nicks.html" {% if page.url == "/nicks.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Nick's</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/games.html" {% if page.url == "/games.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Game sites</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/shoot.html" {% if page.url == "/shoot.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Shooters</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/gd.html" {% if page.url == "/gd.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>GD games</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/misc.html" {% if page.url == "/misc.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Misc.</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/info.html" {% if page.url == "/info.html" %}style="background-color: gray; border-color: #404040; color: white;"{% endif %}>Info page</a>
         </div>
     </div>
