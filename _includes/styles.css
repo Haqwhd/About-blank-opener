@@ -1,3 +1,17 @@
+    /*Button LAYOUT*/
+    .buttons { display: flex; flex-wrap: wrap; 
+    justify-content: center; gap: 8px; 
+    max-width: 1100px; margin: auto;}
+    
+    
+    /*Button STYLING*/
+    .buttons button { font-size: clamp(16px, 1.8vw, 21px); 
+    padding: 6px 8px; cursor: pointer; 
+    border-radius: 25px; background-color: lightblue; 
+    border-color: #7ED4E6; border-width: 7px; 
+    transition: transform 0.2s ease-in-out;}
+    .buttons button:hover { background-color: #1c5cb0; color: white; border-color: #1347a8; transform: scale(1.12); }
+    
     /*anything in corner gets this*/
     .corner {
         position: fixed;
@@ -50,6 +64,8 @@
     .sb {
         position: fixed;
         top: 20px; left: 15px;
+        width: 210px;
+        max-width: 35vw;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
