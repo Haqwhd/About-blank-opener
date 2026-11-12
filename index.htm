@@ -30,8 +30,41 @@
     transition: transform 0.2s ease-in-out;}
     .buttons button:hover { background-color: #1c5cb0; color: white; border-color: #1347a8; transform: scale(1.12); }
     
+    /*anything in corner gets this*/
+    .corner {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 5;
+    }
     
-    .announcements { font-size: clamp(16px, 25px, 30px); margin-bottom: 15px; color: white; }
+    /*fullscreen*/
+    .fs {
+        
+    }
+    
+    .fs button { font-size: clamp(16px, 1.8vw, 21px);
+    padding: 2px 5px; cursor: pointer; 
+    border-radius: 25px; background-color: lightblue; 
+    border-color: #7ED4E6; border-width: 7px; 
+    transition: transform 0.2s ease-in-out; }
+    
+    .fs button:hover {
+        background-color: #1c5cb0;
+        color: white;
+        border-color: #1347a8;
+        transform: scale(1.12);
+    }
+    
+    .fs button:hover img {
+        filter: invert(1);
+    }
+    
+    .announcements {
+        font-size: clamp(16px, 25px, 30px);
+        margin-bottom: 15px;
+        color: white; 
+    }
     
     @media (max-width: 600px) {
     body { padding: 30px 15px; }
@@ -46,55 +79,49 @@
 
     <h1 style="color: white;">Enter a URL to open in an iframe!</h1>
 
-    <div>
-        <input type="text" id="urlInput" placeholder='Example: "example.com"'>
-        <p></p>
-        <div class="buttons">
-            <button onclick="launchUserUrl()">Open Website</button>
+    <div class="buttons">
+        <input type="text" id="urlInput" placeholder='https://example.com'> <button onclick="launchUserUrl()">Open Website</button>
+    </div>
+    
+    <div class="corner">
+        <div class="fs">
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/')"><img src="https://static.thenounproject.com/png/66373-200.png" width="30"></button>
         </div>
     </div>
     
     <div class="category">
-        <p class="category-title">⬇ Fullscreen ⬇</p>
-
         <div class="buttons">
-            <button onclick="create('https://haqwhd.github.io/About-blank-opener/')">Fullscreen</button>
-        </div>
-    </div>
-
-    <div class="category">
-        <p class="category-title">⬇ Nick's ⬇</p>
-        <div class="buttons">
+        <p class="category-title">Nick's:</p>
             <button onclick="create('https://hgbfvgbnhbgpolkk.b-cdn.net')">Xylora</button>
             <button onclick="create('https://script.google.com/macros/s/AKfycbw6tuqMVd77mSnriC26cLUZ0zPO2Vhv5xozGlW_SLyGGGzFNcHj9cSLH9sMuCv2VBK0/exec')">Echo</button>
         </div>
     </div>
 
     <div class="category">
-        <p class="category-title">⬇ Games ⬇</p>
+        <p class="category-title">Games:</p>
 
         <div class="buttons">
-            <button onclick="create('https://krunker.io')"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMt-BJ3x6UsQWJadcGFzo_srDypl-o6s6HUZ8-FrhD9YbiA_dM1LkOlLj3fc2eOMOF7uEQhxgs4ERPyz0zL_I8mqhI30jBEa0M2L-GEc8AVg&amp;s=10" width="50"> Krunker.io</button>
+            <button onclick="create('https://krunker.io')"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMt-BJ3x6UsQWJadcGFzo_srDypl-o6s6HUZ8-FrhD9YbiA_dM1LkOlLj3fc2eOMOF7uEQhxgs4ERPyz0zL_I8mqhI30jBEa0M2L-GEc8AVg&amp;s=10" width="50"><br>Krunker.io</button>
             
             <button onclick="create('https://ubg911.gitlab.io')">UBG 911</button>
             
-            <button onclick="create('https://www.onlinegames.io')"><img src="https://www.onlinegames.io/media/posts/1323/responsive/thumbs-xs.webp" width="50"> OnlineGames.io</button>
+            <button onclick="create('https://www.onlinegames.io')"><img src="https://www.onlinegames.io/media/posts/1323/responsive/thumbs-xs.webp" width="50"><br>OnlineGames.io</button>
             
             <button onclick="create('https://calcsolver.net')">Calcsolver</button>
             
-            <button onclick="create('https://sandstrike.io')"><img src="https://sandstrike.io/logo.png" width="50"> Ferge/Sandstrike</button>
+            <button onclick="create('https://sandstrike.io')"><img src="https://sandstrike.io/logo.png" width="50"><br>Ferge/Sandstrike</button>
             
             <button onclick="create('https://onlinegames.com')">OnlineGames.com</button>
             
             <button onclick="create('https://haqwhd.github.io/About-blank-opener/chat.html')">Live Chatroom</button>
             
-            <button onclick="create('https://geometrylitepc.net')"><img src="https://geometrylitepc.net/data/image/options/geometrydashlite-game-image.png" width="50"> GD thing #1</button>
+            <button onclick="create('https://geometrylitepc.net')"><img src="https://geometrylitepc.net/data/image/options/geometrydashlite-game-image.png" width="50"><br>GD thing #1</button>
             
             <button onclick="create('https://smashkarts.io')"><img src="https://smashkarts.io/images/smashkarts.png" width="80"></button>
             
-            <button onclick="create('https://haqwhd.github.io/About-blank-opener/eag-ct/Minecraft 26,2.html')"><img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a" width="80"> Eaglercraft 26.2 (Zeus)</button>
+            <button onclick="create('https://haqwhd.github.io/About-blank-opener/eag-ct/Minecraft 26,2.html')"><img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a" width="80"><br>Eaglercraft 26.2</button>
 
-            <button onclick="create('https://penguinmod.com/')"><img src="https://penguinmod.com/navicon.png" width="45"> PenguinMod</button>
+            <button onclick="create('https://penguinmod.com/')"><img src="https://penguinmod.com/navicon.png" width="45"><br>PenguinMod</button>
 
             <button onclick="create('https://fnf-2.io')">Fnf game</button>
 
