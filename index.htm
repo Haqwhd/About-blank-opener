@@ -14,11 +14,15 @@
     #urlInput { width: min(600px, 70vw); padding: 14px; font-size: clamp(16px, 2vw, 22px); } 
     .open-button { font-size: clamp(16px, 2vw, 22px); padding: 14px 22px; margin: 5px; cursor: pointer; } 
     .category { margin-top: 30px; } 
-    .category-title { font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 10px; color: white;} 
+    .category-title { font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 10px; color: white;}
+    
+    body {
+        min-height: 100vh;
+    }
     
     /*Button LAYOUT*/
     .buttons { display: flex; flex-wrap: wrap; 
-    justify-content: center; gap: 10px; 
+    justify-content: center; gap: 8px; 
     max-width: 1100px; margin: auto;}
     
     
@@ -44,10 +48,11 @@
     }
     
     .fs button { font-size: clamp(16px, 1.8vw, 21px);
-    padding: 2px 5px; cursor: pointer; 
-    border-radius: 25px; background-color: lightblue; 
-    border-color: #7ED4E6; border-width: 7px; 
-    transition: transform 0.2s ease-in-out; }
+        padding: 2px 5px; cursor: pointer; 
+        border-radius: 25px; background-color: lightblue; 
+        border-color: #7ED4E6; border-width: 7px; 
+        transition: transform 0.2s ease-in-out;
+    }
     
     .fs button:hover {
         background-color: #1c5cb0;
@@ -60,10 +65,53 @@
         filter: invert(1);
     }
     
-    .announcements {
-        font-size: clamp(16px, 25px, 30px);
-        margin-bottom: 15px;
-        color: white; 
+    /*sidebar*/
+    .sb a {
+        display: inline-block;
+        font-size: clamp(16px, 1.8vw, 21px); 
+        color: black;
+        padding: 8px 8px; 
+        cursor: pointer; 
+        border-style: solid; 
+        border-radius: 25px; 
+        background-color: lightgray; 
+        border-color: gray; 
+        border-width: 7px; 
+        transition: transform 0.08s ease-in-out;
+        text-decoration: none;
+    }
+    .sb a:hover {
+        transform: scale(1.10);
+    }
+    .sb {
+        position: fixed;
+        top: 20px; left: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        /*Box ⬇️*/
+        background-color: rgba(0, 4, 53, 0.85);
+        border: 4px solid #7ED4E6;
+        border-radius: 25px;
+        padding: 10px 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 8);
+        z-index: 4;
+        max-height: calc(100vh - 30px)
+    }
+    .sbs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 6px 10px 6px 6px; 
+        box-sizing: border-box;
+    }
+    .sb p {
+        color: white;
     }
     
     @media (max-width: 600px) {
@@ -76,17 +124,31 @@
 </head>
 
 <body>
-
-    <h1 style="color: white;">Enter a URL to open in an iframe!</h1>
-
-    <div class="buttons">
-        <input type="text" id="urlInput" placeholder='https://example.com'> <button onclick="launchUserUrl()">Open Website</button>
-    </div>
     
     <div class="corner">
         <div class="fs">
             <button onclick="create('https://haqwhd.github.io/About-blank-opener/')"><img src="https://static.thenounproject.com/png/66373-200.png" width="30"></button>
         </div>
+    </div>
+    
+    <div class="sb">
+        <p>Announcements: <br>Navigation bar!</p>
+        <p>Navigation:</p>
+        <div class="sbs">
+            <a href="https://haqwhd.github.io/About-blank-opener/" style="background-color: gray; border-color: #404040; color: white;">Home</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/nicks.html">Nick's</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/games.html">Game sites</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/shoot.html">Shooters</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/gd.html">GD games</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/misc.html">Misc.</a>
+            <a href="https://haqwhd.github.io/About-blank-opener/info.html">Info page</a>
+        </div>
+    </div>
+    
+    <h1 style="color: white;">Enter a URL to open in an iframe!</h1>
+
+    <div class="buttons">
+        <input type="text" id="urlInput" placeholder='https://example.com'> <button onclick="launchUserUrl()">Open Website</button>
     </div>
     
     <div class="category">
@@ -141,10 +203,7 @@
         <button onclick="create('https://forms.gle/vHMT5TL7Fs6bFFce6')">Send feedback</button>
       </div>
     </div>
-    
-    <p></p>
-    
-    <a href="https://github.com/Haqwhd/About-blank-opener" class="announcements" color="white">⮕ Original Github Repo here ⬅</a>
+
     <script>
         // URL opener from address bar
         function launchUserUrl() {
