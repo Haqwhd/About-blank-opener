@@ -1,0 +1,119 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Blank Opener</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="https://haqwhd.github.io/About-blank-opener/favicon.png">
+        
+    <style>
+       * { box-sizing: border-box; } 
+    html, body { margin: 0; width: 100%; min-height: 100%; background: linear-gradient(blue, #000435);} 
+    body { font-family: Arial, Helvetica, sans-serif; text-align: center; padding: 5vh 5vw; } 
+    h1 { font-size: clamp(28px, 4vw, 48px); margin: 0 0 25px; } 
+    #urlInput { width: min(600px, 70vw); padding: 14px; font-size: clamp(16px, 2vw, 22px); } 
+    .open-button { font-size: clamp(16px, 2vw, 22px); padding: 14px 22px; margin: 5px; cursor: pointer; } 
+    .category { margin-top: 30px; } 
+    .category-title { font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 10px; color: white;}
+    
+    {% include styles.css %}
+    
+    @media (max-width: 600px) {
+    body { padding: 30px 15px; }
+
+    #urlInput { width: 90vw; }
+
+    .open-button { display: block; margin: 10px auto; } }
+    </style>
+</head>
+
+<body>
+
+    {% include sidebar.html %}
+    
+    <div class="category">
+        <h1 class="category-title">Playarieo Searchbar</h1>
+
+        <div class="buttons">
+            <input type="text" id="videoInput" placeholder="Everything after the ?v=">
+            <button onclick="create('https://haqwhd.github.io/playarieo/search.html?v=' + document.getElementById('videoInput').value)">Enter</button>
+        </div>
+    </div>
+
+    <script>
+        // URL opener from address bar
+        function launchUserUrl() {
+            var inputUrl = document.getElementById('urlInput').value.trim();
+
+            if (!inputUrl) {
+                alert("Please enter a URL first.");
+                return;
+            }
+
+            // Makes it so there always is https:// at beginning
+            if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+                inputUrl = 'https://' + inputUrl;
+            }
+
+            create(inputUrl);
+        }
+
+        document.getElementById("urlInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                launchUserUrl();
+            }
+        });
+
+        // Actual about:blank opener
+        function create(url) {
+            var win = window.open();
+
+            // Popup blocker checker
+            if (!win) {
+                alert("Popup blocked! Please allow popups for this site.");
+                return;
+            }
+
+            // Add close warning to newly opened tab | I know this is a duplicate but I'm scared to remove one in case it breaks
+            win.addEventListener('beforeunload', function(e) {
+                e.preventDefault();
+                e.returnValue = '';
+            });
+
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            win.document.title = 'Google Docs';
+            //favicon
+            var faviconUrl = 'https://ssl.gstatic.com/docs/documents/images/docs-favicon-2026-v2.ico'
+            var link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/svg+xml';
+            link.href = faviconUrl;
+            win.document.head.appendChild(link);
+            //no more favicon
+            var iframe = win.document.createElement('iframe');
+
+            iframe.style.border = 'none';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('allow', 'fullscreen');
+
+            win.document.body.appendChild(iframe);
+        }
+    </script>
+
+    <script>
+        //final browser filter bypasser | I know this is a duplicate but I'm scared to remove one in case it breaks.
+        window.addEventListener('beforeunload', function(e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+
+</body>
+</html>
